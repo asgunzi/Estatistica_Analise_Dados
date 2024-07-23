@@ -10,6 +10,16 @@ Ou baixe o arquivo em
 [https://github.com/asgunzi/Estatistica_Analise_Dados/blob/main/Capitulo1_Estatistica_Descritiva.ipynb](https://github.com/asgunzi/Estatistica_Analise_Dados/blob/main/Capitulo1_Estatistica_Descritiva.ipynb)
 
 
-#Capítulo 2:
+#Capítulo 2: Probabilidades
+
+Vide link no Collab: [https://colab.research.google.com/drive/1FjcQicwyVyeBvQqT8lRaluHUNMpwEmlN?usp=sharing](https://colab.research.google.com/drive/1FjcQicwyVyeBvQqT8lRaluHUNMpwEmlN?usp=sharing)
+
+#Capítulo 3: Intervalo de Confiança e Teorema do Limite Central
+
+Vide link no Collab: [https://colab.research.google.com/drive/1cBbd1BS_asTnbzC7btXwKt8BVeOD3ywU?usp=sharing](https://colab.research.google.com/drive/1cBbd1BS_asTnbzC7btXwKt8BVeOD3ywU?usp=sharing)
+
+
+
+
 
 
