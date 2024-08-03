@@ -30,5 +30,7 @@ Vide link no Collab: [https://colab.research.google.com/drive/1nlrCmJyn7AxSU0dN1
 Vide link no Collab: [https://colab.research.google.com/drive/1nlrCmJyn7AxSU0dN1Gjp3ZQswwgsUGWa?usp=sharing](https://colab.research.google.com/drive/1nlrCmJyn7AxSU0dN1Gjp3ZQswwgsUGWa?usp=sharing)
 
 
+#Capítulo 8: Teste de Hipótese
 
+Vide link no Collab: [https://colab.research.google.com/drive/1Bg7xcWxsZcph2OuTSLTrU3zL_X62sfP2?usp=sharing](https://colab.research.google.com/drive/1Bg7xcWxsZcph2OuTSLTrU3zL_X62sfP2?usp=sharing)
 
