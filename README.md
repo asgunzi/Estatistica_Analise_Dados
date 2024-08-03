@@ -20,9 +20,14 @@ Vide link no Collab: [https://colab.research.google.com/drive/1cBbd1BS_asTnbzC7b
 
 
 
-#Capítulo 4: Regressão Linear
+#Capítulo 6: Regressão Linear
 
-Vide link no Collab: [https://colab.research.google.com/drive/1lhXxQ_JZJ6uZhpAFMzZ9iYDy_RKJomAu?usp=sharing](https://colab.research.google.com/drive/1lhXxQ_JZJ6uZhpAFMzZ9iYDy_RKJomAu?usp=sharing)
+Vide link no Collab: [https://colab.research.google.com/drive/1nlrCmJyn7AxSU0dN1Gjp3ZQswwgsUGWa?usp=sharing](https://colab.research.google.com/drive/1nlrCmJyn7AxSU0dN1Gjp3ZQswwgsUGWa?usp=sharing)
+
+
+#Capítulo 7: Regressão Logística
+
+Vide link no Collab: [https://colab.research.google.com/drive/1nlrCmJyn7AxSU0dN1Gjp3ZQswwgsUGWa?usp=sharing](https://colab.research.google.com/drive/1nlrCmJyn7AxSU0dN1Gjp3ZQswwgsUGWa?usp=sharing)
 
 
 
