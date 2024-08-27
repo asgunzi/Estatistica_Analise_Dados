@@ -157,11 +157,10 @@ print("Paired t-test:", t_test)
 # H0: O fato do cliente estar ou não com criança não tem relação com o fato de comprar ou não comprar
 # H1: O fato do cliente estar com a criança tem relação com comprar
 
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import chi2_contingency, chi2
+from scipy.stats import chi2_contingency
 #Vamos gerar um data frame contendo os dados da pesquisa
 
 # Dados
@@ -192,7 +191,7 @@ dados = pd.DataFrame({
 })
 
 # Visualiza o conjunto de dados
-print(dados)
+print(dados.head())
 
 # Gera tabela de contingência
 tabela = pd.crosstab(dados['Cliente'], dados['Comprou'])
@@ -205,68 +204,7 @@ plt.ylabel('Contagem')
 plt.title('Tabela de Contingência')
 plt.show()
 
-# Valor crítico para uma distribuição qui-quadrado com 1 grau de liberdade ao nível de confiança de 95%
-valor_critico = chi2.ppf(0.95, df=1)
-print("Valor crítico:", valor_critico)
 
-# O valor p unilateral
-valor_p = 1 - chi2.cdf(10.728, df=1)
-print("Valor p:", valor_p)
-
-# Teste qui-quadrado
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import chi2_contingency, chi2
-
-# Dados
-dados = pd.DataFrame({
-    'Cliente': ["Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca",
-                "Adulto", "Adulto", "Adulto", "Adulto_com_Crianca", "Adulto_com_Crianca",
-                "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca",
-                "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca",
-                "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca",
-                "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca",
-                "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca",
-                "Adulto_com_Crianca", "Adulto", "Adulto", "Adulto", "Adulto",
-                "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca",
-                "Adulto_com_Crianca", "Adulto", "Adulto_com_Crianca", "Adulto",
-                "Adulto", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca",
-                "Adulto", "Adulto_com_Crianca", "Adulto", "Adulto", "Adulto",
-                "Adulto", "Adulto", "Adulto", "Adulto", "Adulto", "Adulto"],
-    'Comprou': ["Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou",
-                "Não_Comprou", "Não_Comprou", "Comprou", "Comprou", "Comprou",
-                "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou",
-                "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou",
-                "Comprou", "Comprou", "Comprou", "Não_Comprou", "Não_Comprou",
-                "Não_Comprou", "Não_Comprou", "Comprou", "Não_Comprou", "Comprou",
-                "Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou",
-                "Não_Comprou", "Comprou", "Comprou", "Não_Comprou", "Não_Comprou",
-                "Não_Comprou", "Não_Comprou", "Não_Comprou", "Comprou", "Comprou",
-                "Comprou", "Comprou", "Comprou", "Comprou"]
-})
-
-# Visualiza o conjunto de dados
-print(dados)
-
-# Gera tabela de contingência
-tabela = pd.crosstab(dados['Cliente'], dados['Comprou'])
-print(tabela)
-
-# Cria o gráfico de barras
-tabela.plot(kind='bar', stacked=True)
-plt.xlabel('Cliente')
-plt.ylabel('Contagem')
-plt.title('Tabela de Contingência')
-plt.show()
-
-# Valor crítico para uma distribuição qui-quadrado com 1 grau de liberdade ao nível de confiança de 95%
-valor_critico = chi2.ppf(0.95, df=1)
-print("Valor crítico:", valor_critico)
-
-# O valor p unilateral
-valor_p = 1 - chi2.cdf(10.728, df=1)
-print("Valor p:", valor_p)
 
 # Teste qui-quadrado
 chi2_stat, p_val, dof, ex = chi2_contingency(tabela, correction=False)
@@ -276,6 +214,7 @@ print(f"Valor P: {p_val:.4f}")
 print(f"Graus de Liberdade: {dof}")
 print("Frequências Esperadas:\n", pd.DataFrame(ex, index=tabela.index, columns=tabela.columns))
 
+#Valores que seriam esperados em cada célula da tabela se as variáveis fossem independentes.
 
 
 
@@ -284,13 +223,8 @@ print("Frequências Esperadas:\n", pd.DataFrame(ex, index=tabela.index, columns=
 #H0: Não há diferença no valor médio gasto com bebidas em nenhuma das populações
 #H1: Há diferença no valor médio gasto com bebidas em pelo menos uma das populações
 
-
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Aug  1 09:07:55 2024
-
-@author: asgunzi
-"""
+#T-student: comparar médias de dois grupos
+#ANOVA: comparar médias de três ou mais grupos     
 
 import pandas as pd
 import scipy.stats as stats

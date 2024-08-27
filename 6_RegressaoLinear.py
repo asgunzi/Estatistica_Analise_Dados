@@ -67,6 +67,7 @@ intercepto = model.intercept_  # Intercepto (constante)
 print(f'Coeficiente (Inclinação): {coeficiente}')
 print(f'Intercepto: {intercepto}')
 
+
 #==========================
 
 

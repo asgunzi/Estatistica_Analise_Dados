@@ -3,9 +3,9 @@
 
 import numpy as np
 import pandas as pd
-import statsmodels.api as sm
 from sklearn.metrics import roc_curve, auc, confusion_matrix
-import matplotlib.pyplot as plt
+
+from sklearn.linear_model import LogisticRegression
 
 
 dados = pd.DataFrame({'Prova_Logica': [2, 2, 5, 5, 5, 2, 3, 2, 1, 4, 
@@ -209,24 +209,33 @@ print(means_by_classe)
 
 
 #Fórmula
-formula = 'Classe_Cod ~ Prova_Logica + Redacao + Auto_Avaliacao'
-
+X = dados[['Prova_Logica','Redacao','Auto_Avaliacao']].values
+y = dados['Classe_Cod']
+                                    
 # Fit da regressão logística
-fit = sm.Logit.from_formula(formula, data=dados).fit()
+model = LogisticRegression()
+model.fit(X, y)
 
-# Resumo do modelo após fit
-print(fit.summary())
+#Coeficientes e intercepto
+intercepto = model.intercept_
+coeficientes = model.coef_
 
+print("Intercepto: ", intercepto)
+print("Coeficientes: ", coeficientes)
 
 # Aplica exponenciação nos coeficientes para interpretar
-exp_coefficients = np.exp(fit.params)
-print(exp_coefficients)
+print('Exponencial dos coeficientes:',  np.exp(coeficientes))
 
-#Curva ROC
-#prob = fit.predict(dados['Prova_Logica', 'Redacao', 'Auto_Avaliacao'])
-prob = fit.predict(dados)
+print('Exponencial do intercepto:',  np.exp(intercepto))
 
-fpr, tpr, _ = roc_curve(dados['Classe_Cod'], prob)
+# Obtem a predicao/probabilidade para cada observacao
+Proba = model.predict_proba(X)
+
+Probabilidade =Proba[:,1] #Para pegar apenas a segunda coluna
+
+import matplotlib.pyplot as plt
+
+fpr, tpr, _ = roc_curve(dados['Classe_Cod'], Probabilidade)
 roc_auc = auc(fpr, tpr)
 
 # Plotar a curva ROC
@@ -241,10 +250,6 @@ plt.title('Curva ROC')
 plt.legend(loc="lower right")
 plt.show()
 
-
-
-# Obtem a predicao/probabilidade para cada observacao
-Probabilidade = fit.predict(dados)
 
 # Se a probabilidade for maior que 50% classifica como 'Boa'
 Classe_Predita = np.where(Probabilidade > 0.5, "Boa", "Ruim")
@@ -282,5 +287,7 @@ print(f"Sensitividade: {sensitividade:.3f}")
 # Calcula a Especificidade
 especificidade = vn / (vn + fp)
 print(f"Especificidade: {especificidade:.3f}")
+
+
 
 
